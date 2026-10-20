@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eduverso — Un universo de conocimiento a tu alcance</title>
+  <meta name="description" content="Eduverso es una plataforma educativa que acerca el conocimiento a todas las personas, sin importar su edad, ubicación o nivel de formación previo.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23087f83' stroke-width='2' stroke-linecap='round'><circle cx='12' cy='12' r='4.2'/><ellipse cx='12' cy='12' rx='10.5' ry='4.2' transform='rotate(-22 12 12)'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===== Barra de navegación ===== -->
+  <header class="navbar">
+    <nav class="nav-contenido contenedor">
+      <a href="index.html" class="logo">
+        <span class="logo-icono" data-icono="logo"></span>
+        <span class="logo-texto">Edu<span>verso</span></span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="activo">Inicio</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="cuenta.html?vista=login">Iniciar sesión</a></li>
+        <li><a href="cuenta.html?vista=registro">Crear cuenta</a></li>
+        <li><a href="admin.html" class="nav-admin">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="contenedor hero-contenido">
+      <span class="hero-badge">✦ Aprender no tiene límites</span>
+      <h1>Un universo de <span class="texto-gradiente">conocimiento</span> a tu alcance</h1>
+      <p class="hero-descripcion">
+        En Eduverso conectamos a quienes quieren aprender con cursos, recursos y
+        servicios educativos accesibles y de calidad — sin importar tu edad, tu
+        ubicación o tu nivel de formación previo.
+      </p>
+      <div class="hero-botones">
+        <a href="catalogo.html" class="btn btn-primario">Explorar cursos</a>
+        <button class="btn btn-secundario" id="btn-hero-chat"><span data-icono="chat"></span>Habla con Eda, nuestra IA</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <strong id="stat-cursos">12+</strong>
+          <span>Cursos disponibles</span>
+        </div>
+        <div class="stat">
+          <strong>100%</strong>
+          <span>En línea</span>
+        </div>
+        <div class="stat">
+          <strong id="stat-gratis">4</strong>
+          <span>Cursos gratuitos</span>
+        </div>
+        <div class="stat">
+          <strong>6</strong>
+          <span>Áreas de estudio</span>
+        </div>
+      </div>
+      <aside class="hero-universo" aria-label="Vista previa de la experiencia Eduverso">
+        <div class="universo-orbita orbita-externa"></div>
+        <div class="universo-orbita orbita-interna"></div>
+        <span class="universo-estrella estrella-uno">✦</span>
+        <span class="universo-estrella estrella-dos">✧</span>
+        <span class="universo-planeta" aria-hidden="true"><span></span></span>
+        <div class="universo-nota nota-curso"><span class="nota-icono" data-icono="codigo"></span><span><small>Tu próxima aventura</small><strong>Aprende algo nuevo</strong></span><span class="nota-flecha">↗</span></div>
+        <div class="universo-nota nota-eda"><span class="nota-avatar" data-icono="bot"></span><span><small>EDA · TU GUÍA</small><strong>¿Qué te gustaría aprender?</strong></span></div>
+        <span class="universo-etiqueta">Un universo de posibilidades <span>✦</span></span>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== ¿Por qué Eduverso? ===== -->
+  <section class="seccion" id="beneficios">
+    <div class="contenedor">
+      <span class="seccion-etiqueta">Nuestra misión</span>
+      <h2 class="seccion-titulo">¿Por qué Eduverso?</h2>
+      <p class="seccion-descripcion">Creemos que la educación es un derecho, no un privilegio.</p>
+      <div class="grid-beneficios">
+        <article class="tarjeta-beneficio" data-aos="fade-up">
+          <div class="beneficio-icono" data-icono="globo"></div>
+          <h3>Accesible para todos</h3>
+          <p>Contenido pensado para cualquier edad y nivel: empieza desde cero o profundiza lo que ya sabes.</p>
+        </article>
+        <article class="tarjeta-beneficio" data-aos="fade-up">
+          <div class="beneficio-icono" data-icono="reloj"></div>
+          <h3>Aprende a tu ritmo</h3>
+          <p>Cursos virtuales que se adaptan a tus horarios, desde donde estés y con el dispositivo que tengas.</p>
+        </article>
+        <article class="tarjeta-beneficio" data-aos="fade-up">
+          <div class="beneficio-icono" data-icono="bot"></div>
+          <h3>Asistente con IA</h3>
+          <p>Eda, nuestra asistente inteligente, resuelve tus dudas y te recomienda el curso ideal para ti.</p>
+        </article>
+        <article class="tarjeta-beneficio" data-aos="fade-up">
+          <div class="beneficio-icono" data-icono="birrete"></div>
+          <h3>Certifica tu avance</h3>
+          <p>Recibe constancia de participación al completar tus cursos y construye tu ruta de aprendizaje.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Cursos destacados ===== -->
+  <section class="seccion seccion-alterna" id="destacados">
+    <div class="contenedor">
+      <span class="seccion-etiqueta">Catálogo</span>
+      <h2 class="seccion-titulo">Cursos destacados</h2>
+      <p class="seccion-descripcion">Una muestra de nuestro universo educativo.</p>
+      <div class="grid-cursos" id="cursos-destacados">
+        <!-- Se llena dinámicamente con JavaScript -->
+      </div>
+      <div class="centrado">
+        <a href="catalogo.html" class="btn btn-primario">Ver todo el catálogo →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Cómo funciona ===== -->
+  <section class="seccion" id="como-funciona">
+    <div class="contenedor">
+      <span class="seccion-etiqueta">Paso a paso</span>
+      <h2 class="seccion-titulo">¿Cómo funciona?</h2>
+      <p class="seccion-descripcion">Empezar a aprender en Eduverso es muy fácil.</p>
+      <div class="grid-pasos">
+        <article class="tarjeta-paso" data-aos="zoom-in">
+          <span class="paso-numero">1</span>
+          <h3>Explora el catálogo</h3>
+          <p>Descubre cursos de tecnología, idiomas, arte, negocios, ciencias y desarrollo personal.</p>
+        </article>
+        <article class="tarjeta-paso" data-aos="zoom-in">
+          <span class="paso-numero">2</span>
+          <h3>Pide orientación</h3>
+          <p>Habla con Eda o escríbenos por el formulario de contacto para resolver tus dudas.</p>
+        </article>
+        <article class="tarjeta-paso" data-aos="zoom-in">
+          <span class="paso-numero">3</span>
+          <h3>Inscríbete y aprende</h3>
+          <p>Te acompañamos en tu proceso para que llegues tan lejos como quieras.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Testimonios ===== -->
+  <section class="seccion seccion-alterna" id="testimonios">
+    <div class="contenedor">
+      <span class="seccion-etiqueta">Comunidad</span>
+      <h2 class="seccion-titulo">Lo que dice nuestra comunidad</h2>
+      <p class="seccion-descripcion">Personas reales que transformaron su futuro aprendiendo.</p>
+      <div class="grid-testimonios">
+        <article class="tarjeta-testimonio" data-aos="fade-up">
+          <p>“A mis 52 años pensé que la tecnología no era para mí. Con el curso de programación desde cero descubrí que nunca es tarde para aprender.”</p>
+          <div class="testimonio-autor">
+            <span class="testimonio-avatar">MR</span>
+            <div><strong>Marta Restrepo</strong><small>Estudiante de Programación</small></div>
+          </div>
+        </article>
+        <article class="tarjeta-testimonio" data-aos="fade-up">
+          <p>“Vivo en una zona rural y Eduverso me permitió estudiar inglés sin desplazarme. La asistente Eda me ayudó a elegir el curso perfecto.”</p>
+          <div class="testimonio-autor">
+            <span class="testimonio-avatar">JP</span>
+            <div><strong>Julián Pérez</strong><small>Estudiante de Inglés</small></div>
+          </div>
+        </article>
+        <article class="tarjeta-testimonio" data-aos="fade-up">
+          <p>“Gracias al curso de emprendimiento digital pude organizar mi negocio de repostería y ahora vendo por internet.”</p>
+          <div class="testimonio-autor">
+            <span class="testimonio-avatar">CT</span>
+            <div><strong>Camila Torres</strong><small>Estudiante de Emprendimiento</small></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Llamado a la acción ===== -->
+  <section class="cta-banda">
+    <div class="contenedor cta-contenido" data-aos="zoom-in">
+      <h2>¿No sabes por dónde empezar?</h2>
+      <p>Pregúntale a Eda, nuestra asistente con inteligencia artificial, y recibe una recomendación a tu medida.</p>
+      <button class="btn btn-claro" id="btn-cta-chat"><span data-icono="chispa"></span>Pedir una recomendación</button>
+    </div>
+  </section>
+
+  <!-- ===== Pie de página ===== -->
+  <footer class="footer">
+    <div class="contenedor footer-contenido">
+      <div class="footer-columna">
+        <a href="index.html" class="logo">
+          <span class="logo-icono" data-icono="logo"></span>
+          <span class="logo-texto logo-claro">Edu<span>verso</span></span>
+        </a>
+        <p>Acercamos el conocimiento a todas las personas, sin importar su edad, ubicación o nivel de formación previo.</p>
+      </div>
+      <div class="footer-columna">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="cuenta.html">Mi cuenta</a></li>
+          <li><a href="admin.html">Panel admin</a></li>
+        </ul>
+      </div>
+      <div class="footer-columna">
+        <h4>Áreas de estudio</h4>
+        <ul>
+          <li><a href="catalogo.html">Tecnología</a></li>
+          <li><a href="catalogo.html">Idiomas</a></li>
+          <li><a href="catalogo.html">Arte y Diseño</a></li>
+          <li><a href="catalogo.html">Negocios</a></li>
+        </ul>
+      </div>
+      <div class="footer-columna">
+        <h4>Contacto</h4>
+        <ul>
+          <li><span data-icono="correo"></span>hola@eduverso.edu.co</li>
+          <li><span data-icono="telefono"></span>+57 300 123 4567</li>
+          <li><span data-icono="ubicacion"></span>Colombia — 100% virtual</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-linea">
+      <p>© 2026 Eduverso · Proyecto final Jóvenes Creativos · Hecho para aprender</p>
+    </div>
+  </footer>
+
+  <script src="js/iconos.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 700, once: true, offset: 80 });
+  </script>
+</body>
+</html>

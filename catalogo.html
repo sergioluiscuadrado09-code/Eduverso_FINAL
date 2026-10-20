@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo — Eduverso</title>
+  <meta name="description" content="Explora el catálogo de cursos y servicios educativos de Eduverso: tecnología, idiomas, arte, negocios, ciencias y desarrollo personal.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23087f83' stroke-width='2' stroke-linecap='round'><circle cx='12' cy='12' r='4.2'/><ellipse cx='12' cy='12' rx='10.5' ry='4.2' transform='rotate(-22 12 12)'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===== Barra de navegación ===== -->
+  <header class="navbar">
+    <nav class="nav-contenido contenedor">
+      <a href="index.html" class="logo">
+        <span class="logo-icono" data-icono="logo"></span>
+        <span class="logo-texto">Edu<span>verso</span></span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="catalogo.html" class="activo">Catálogo</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="cuenta.html?vista=login">Iniciar sesión</a></li>
+        <li><a href="cuenta.html?vista=registro">Crear cuenta</a></li>
+        <li><a href="admin.html" class="nav-admin">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Encabezado ===== -->
+  <section class="encabezado-pagina">
+    <div class="contenedor">
+      <h1>Nuestro <span class="texto-gradiente">catálogo</span> educativo</h1>
+      <p>Cursos y servicios pensados para que cualquier persona pueda aprender, sin importar su punto de partida.</p>
+    </div>
+  </section>
+
+  <!-- ===== Catálogo ===== -->
+  <section class="seccion">
+    <div class="contenedor">
+
+      <div class="barra-filtros">
+        <input
+          type="search"
+          id="campo-busqueda"
+          class="campo-busqueda"
+          placeholder="Buscar un curso, tema o palabra clave..."
+          aria-label="Buscar cursos">
+      </div>
+
+        <div class="chips-categorias" id="chips-categorias" aria-label="Filtrar cursos por área">
+        <!-- Se llena dinámicamente con JavaScript -->
+      </div>
+
+      <br>
+
+      <div class="grid-cursos" id="grid-catalogo" aria-live="polite" aria-busy="false">
+        <!-- Se llena dinámicamente con JavaScript -->
+      </div>
+
+      <p class="sin-resultados" id="sin-resultados" role="status" hidden>
+        No encontramos cursos con esa búsqueda.<br>
+        Intenta con otra palabra o pregúntale a <strong>Eda</strong>, nuestra asistente.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ===== Pie de página ===== -->
+  <footer class="footer">
+    <div class="contenedor footer-contenido">
+      <div class="footer-columna">
+        <a href="index.html" class="logo"><span class="logo-icono" data-icono="logo"></span><span class="logo-texto logo-claro">Edu<span>verso</span></span></a>
+        <p>Aprender abre nuevos caminos. Explora cursos pensados para acompañarte desde donde estés.</p>
+      </div>
+      <div class="footer-columna"><h4>Explora</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="catalogo.html">Catálogo</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="cuenta.html">Mi cuenta</a></li></ul></div>
+      <div class="footer-columna"><h4>Aprende a tu ritmo</h4><ul><li><a href="catalogo.html">Tecnología</a></li><li><a href="catalogo.html">Idiomas</a></li><li><a href="catalogo.html">Arte y diseño</a></li><li><a href="catalogo.html">Negocios</a></li></ul></div>
+      <div class="footer-columna"><h4>Estamos para ayudarte</h4><ul><li><a href="mailto:hola@eduverso.edu.co">hola@eduverso.edu.co</a></li><li><a href="contacto.html">Escríbenos</a></li><li>Colombia · 100% virtual</li></ul></div>
+    </div>
+    <div class="footer-linea">
+      <p>© 2026 Eduverso · Proyecto final Jóvenes Creativos · Hecho para aprender</p>
+    </div>
+  </footer>
+
+  <script src="js/iconos.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/catalogo.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 700, once: true, offset: 80 });
+  </script>
+</body>
+</html>

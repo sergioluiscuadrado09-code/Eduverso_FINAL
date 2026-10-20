@@ -1,0 +1,11 @@
+{
+  "name": "eduverso",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Plataforma educativa Eduverso con cuentas, panel y almacenamiento JSON persistente.",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": { "node": ">=20" }
+}

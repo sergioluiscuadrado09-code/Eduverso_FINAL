@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de administración — Eduverso</title>
+  <meta name="description" content="Zona de gestión interna de Eduverso: cursos y solicitudes de contacto.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23087f83' stroke-width='2' stroke-linecap='round'><circle cx='12' cy='12' r='4.2'/><ellipse cx='12' cy='12' rx='10.5' ry='4.2' transform='rotate(-22 12 12)'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===== Barra de navegación ===== -->
+  <header class="navbar">
+    <nav class="nav-contenido contenedor">
+      <a href="index.html" class="logo">
+        <span class="logo-icono" data-icono="logo"></span>
+        <span class="logo-texto">Edu<span>verso</span></span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="cuenta.html?vista=login">Iniciar sesión</a></li>
+        <li><a href="cuenta.html?vista=registro">Crear cuenta</a></li>
+        <li><a href="admin.html" class="nav-admin activo">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="admin-fondo">
+
+    <!-- ===== Vista de login ===== -->
+    <section id="vista-login" class="contenedor">
+      <div class="tarjeta-login">
+        <span class="logo-icono" data-icono="candado"></span>
+        <h1>Zona de gestión</h1>
+        <p>Acceso exclusivo para el equipo de Eduverso.</p>
+        <form id="formulario-login">
+          <div class="campo-grupo">
+              <label for="usuario">Correo de administración</label>
+              <input type="email" id="usuario" name="usuario" placeholder="admin@eduverso.edu.co" autocomplete="username" required>
+          </div>
+          <div class="campo-grupo">
+            <label for="clave">Contraseña</label>
+            <input type="password" id="clave" name="clave" placeholder="Tu contraseña" autocomplete="current-password" required>
+          </div>
+          <button type="submit" class="btn btn-primario btn-completo">Ingresar</button>
+          <p class="mensaje-estado" id="estado-login" role="status" aria-live="polite"></p>
+        </form>
+        <p class="pista-login">Usa la cuenta única de administración configurada para Eduverso. Cambia su contraseña inicial después del primer ingreso.</p>
+      </div>
+    </section>
+
+    <!-- ===== Vista del panel ===== -->
+    <section id="vista-panel" class="contenedor" hidden>
+
+      <div class="admin-encabezado">
+        <div>
+          <h1>Panel de administración</h1>
+          <p>Gestiona los cursos del catálogo y las solicitudes de contacto.</p>
+        </div>
+        <button class="btn btn-peligro" id="boton-salir">Cerrar sesión</button>
+      </div>
+
+      <div class="grid-estadisticas">
+        <div class="tarjeta-estadistica">
+          <span class="estadistica-icono" data-icono="libro"></span>
+          <div>
+            <strong id="est-cursos">0</strong>
+            <span>Cursos publicados</span>
+          </div>
+        </div>
+        <div class="tarjeta-estadistica">
+          <span class="estadistica-icono" data-icono="regalo"></span>
+          <div>
+            <strong id="est-gratis">0</strong>
+            <span>Cursos gratuitos</span>
+          </div>
+        </div>
+        <div class="tarjeta-estadistica">
+          <span class="estadistica-icono" data-icono="bandeja"></span>
+          <div>
+            <strong id="est-mensajes">0</strong>
+            <span>Solicitudes recibidas</span>
+          </div>
+        </div>
+        <div class="tarjeta-estadistica">
+          <span class="estadistica-icono" data-icono="campana"></span>
+          <div>
+            <strong id="est-nuevos">0</strong>
+            <span>Sin atender</span>
+          </div>
+        </div>
+        <div class="tarjeta-estadistica">
+          <span class="estadistica-icono" data-icono="usuario"></span>
+          <div><strong id="est-clientes">0</strong><span>Clientes registrados</span></div>
+        </div>
+        <div class="tarjeta-estadistica">
+          <span class="estadistica-icono" data-icono="birrete"></span>
+          <div><strong id="est-inscripciones">0</strong><span>Solicitudes de cupo</span></div>
+        </div>
+      </div>
+
+      <div class="pestanas">
+        <button class="pestana activa" data-panel="panel-cursos">Cursos</button>
+        <button class="pestana" data-panel="panel-mensajes">Solicitudes</button>
+          <button class="pestana" data-panel="panel-clientes">Clientes</button>
+          <button class="pestana" data-panel="panel-seguridad">Seguridad</button>
+      </div>
+
+      <!-- ===== Gestión de cursos ===== -->
+      <div class="panel-seccion visible" id="panel-cursos">
+
+        <div class="formulario-admin">
+          <h3 id="titulo-formulario-curso">Agregar nuevo curso</h3>
+          <form id="formulario-curso">
+            <input type="hidden" id="curso-id">
+            <div class="fila-doble">
+              <div class="campo-grupo">
+                <label for="curso-nombre">Nombre del curso *</label>
+                <input type="text" id="curso-nombre" placeholder="Ej: Introducción a la Astronomía" required>
+              </div>
+              <div class="campo-grupo">
+                <label for="curso-categoria">Categoría *</label>
+                <select id="curso-categoria" required>
+                  <!-- Se llena dinámicamente -->
+                </select>
+              </div>
+            </div>
+            <div class="fila-triple">
+              <div class="campo-grupo">
+                <label for="curso-nivel">Nivel</label>
+                <select id="curso-nivel">
+                  <option>Principiante</option>
+                  <option>Intermedio</option>
+                  <option>Avanzado</option>
+                  <option>Todos los niveles</option>
+                </select>
+              </div>
+              <div class="campo-grupo">
+                <label for="curso-duracion">Duración</label>
+                <input type="text" id="curso-duracion" placeholder="Ej: 6 semanas">
+              </div>
+              <div class="campo-grupo">
+                <label for="curso-precio">Precio (COP, 0 = gratis)</label>
+                <input type="number" id="curso-precio" min="0" step="1000" value="0">
+              </div>
+            </div>
+            <div class="campo-grupo">
+              <label for="curso-modalidad">Modalidad</label>
+              <select id="curso-modalidad">
+                <option>Virtual · En vivo</option>
+                <option>Virtual · A tu ritmo</option>
+              </select>
+            </div>
+            <div class="campo-grupo">
+              <label for="curso-descripcion">Descripción *</label>
+              <textarea id="curso-descripcion" placeholder="¿Qué aprenderá el estudiante en este curso?" required></textarea>
+            </div>
+            <div class="acciones-formulario">
+              <button type="submit" class="btn btn-primario" id="boton-guardar-curso">Guardar curso</button>
+              <button type="button" class="btn btn-peligro" id="boton-cancelar-edicion" hidden>Cancelar edición</button>
+            </div>
+            <p class="mensaje-estado" id="estado-curso" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="tabla-envoltura">
+          <table class="tabla">
+            <thead>
+              <tr>
+                <th>Curso</th>
+                <th>Categoría</th>
+                <th>Nivel</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-cursos">
+              <!-- Se llena dinámicamente -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ===== Bandeja de solicitudes ===== -->
+      <div class="panel-seccion" id="panel-mensajes">
+        <div class="tabla-envoltura">
+          <table class="tabla">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Contacto</th>
+                <th>Motivo</th>
+                <th>Mensaje</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-mensajes">
+              <!-- Se llena dinámicamente -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel-seccion" id="panel-clientes">
+        <div class="tabla-envoltura"><table class="tabla"><thead><tr><th>Cliente</th><th>Correo</th><th>Registro</th><th>Inscripciones</th></tr></thead><tbody id="tabla-clientes"></tbody></table></div>
+      </div>
+
+      <div class="panel-seccion" id="panel-seguridad">
+        <div class="formulario-admin seguridad-admin"><span class="seccion-etiqueta">Cuenta protegida</span><h3>Cambiar contraseña de administración</h3><p>Usa una contraseña distinta y guárdala en un lugar seguro.</p>
+          <form id="formulario-clave-admin"><div class="fila-doble"><div class="campo-grupo"><label for="clave-actual">Contraseña actual</label><input id="clave-actual" type="password" autocomplete="current-password" required></div><div class="campo-grupo"><label for="clave-nueva">Nueva contraseña</label><input id="clave-nueva" type="password" autocomplete="new-password" minlength="12" required aria-describedby="ayuda-clave-admin"><small id="ayuda-clave-admin">12 caracteres como mínimo, con letras y números.</small></div></div><button class="btn btn-primario" type="submit">Actualizar contraseña</button><p class="mensaje-estado" id="estado-clave-admin" role="status" aria-live="polite"></p></form>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+  <script src="js/iconos.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

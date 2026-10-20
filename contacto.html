@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — Eduverso</title>
+  <meta name="description" content="Escríbenos y te orientamos para encontrar el curso ideal para ti. Formulario de contacto de Eduverso.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23087f83' stroke-width='2' stroke-linecap='round'><circle cx='12' cy='12' r='4.2'/><ellipse cx='12' cy='12' rx='10.5' ry='4.2' transform='rotate(-22 12 12)'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===== Barra de navegación ===== -->
+  <header class="navbar">
+    <nav class="nav-contenido contenedor">
+      <a href="index.html" class="logo">
+        <span class="logo-icono" data-icono="logo"></span>
+        <span class="logo-texto">Edu<span>verso</span></span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="contacto.html" class="activo">Contacto</a></li>
+        <li><a href="cuenta.html?vista=login">Iniciar sesión</a></li>
+        <li><a href="cuenta.html?vista=registro">Crear cuenta</a></li>
+        <li><a href="admin.html" class="nav-admin">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Encabezado ===== -->
+  <section class="encabezado-pagina">
+    <div class="contenedor">
+      <h1>Hablemos de tu <span class="texto-gradiente">futuro</span></h1>
+      <p>¿Tienes dudas o quieres inscribirte en un curso? Escríbenos y nuestro equipo te responderá muy pronto.</p>
+    </div>
+  </section>
+
+  <!-- ===== Contacto ===== -->
+  <section class="seccion">
+    <div class="contenedor grid-contacto">
+
+      <div class="tarjeta-formulario" data-aos="fade-up">
+        <form id="formulario-contacto" novalidate>
+          <div class="fila-doble">
+            <div class="campo-grupo">
+              <label for="nombre">Nombre completo *</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Ej: Ana María López" required>
+            </div>
+            <div class="campo-grupo">
+              <label for="correo">Correo electrónico *</label>
+              <input type="email" id="correo" name="correo" placeholder="Ej: ana@correo.com" required>
+            </div>
+          </div>
+          <div class="fila-doble">
+            <div class="campo-grupo">
+              <label for="telefono">Teléfono / WhatsApp</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="Ej: 300 123 4567">
+            </div>
+            <div class="campo-grupo">
+              <label for="motivo">Motivo del mensaje *</label>
+              <select id="motivo" name="motivo" required>
+                <option value="">Selecciona una opción...</option>
+                <option value="Información de un curso">Quiero información de un curso</option>
+                <option value="Inscripción">Quiero inscribirme</option>
+                <option value="Orientación">Necesito orientación para elegir</option>
+                <option value="Alianzas">Alianzas o convenios</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+          </div>
+          <div class="campo-grupo">
+            <label for="curso">Curso de interés (opcional)</label>
+            <select id="curso" name="curso">
+              <option value="">Aún no lo tengo claro</option>
+              <!-- Se llena dinámicamente con JavaScript -->
+            </select>
+          </div>
+          <div class="campo-grupo">
+            <label for="mensaje">Tu mensaje *</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos qué te gustaría aprender o en qué podemos ayudarte..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primario btn-completo"><span data-icono="enviar"></span>Enviar mensaje</button>
+          <p class="mensaje-estado" id="estado-formulario" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <aside class="info-contacto">
+        <div class="tarjeta-info">
+          <span class="info-icono" data-icono="correo"></span>
+          <div>
+            <strong>Correo</strong>
+            <p>hola@eduverso.edu.co</p>
+          </div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="info-icono" data-icono="telefono"></span>
+          <div>
+            <strong>WhatsApp</strong>
+            <p>+57 300 123 4567</p>
+          </div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="info-icono" data-icono="reloj"></span>
+          <div>
+            <strong>Horario de atención</strong>
+            <p>Lunes a viernes, 8:00 a.m. — 6:00 p.m.</p>
+          </div>
+        </div>
+        <div class="tarjeta-info">
+          <span class="info-icono" data-icono="bot"></span>
+          <div>
+            <strong>¿Respuesta inmediata?</strong>
+            <p>Habla con <strong>Eda</strong>, nuestra asistente con IA, en la burbuja de la esquina inferior.</p>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- ===== Pie de página ===== -->
+  <footer class="footer">
+    <div class="contenedor footer-contenido">
+      <div class="footer-columna">
+        <a href="index.html" class="logo"><span class="logo-icono" data-icono="logo"></span><span class="logo-texto logo-claro">Edu<span>verso</span></span></a>
+        <p>Aprender abre nuevos caminos. Explora cursos pensados para acompañarte desde donde estés.</p>
+      </div>
+      <div class="footer-columna"><h4>Explora</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="catalogo.html">Catálogo</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="cuenta.html">Mi cuenta</a></li></ul></div>
+      <div class="footer-columna"><h4>Aprende a tu ritmo</h4><ul><li><a href="catalogo.html">Tecnología</a></li><li><a href="catalogo.html">Idiomas</a></li><li><a href="catalogo.html">Arte y diseño</a></li><li><a href="catalogo.html">Negocios</a></li></ul></div>
+      <div class="footer-columna"><h4>Estamos para ayudarte</h4><ul><li><a href="mailto:hola@eduverso.edu.co">hola@eduverso.edu.co</a></li><li><a href="contacto.html">Escríbenos</a></li><li>Colombia · 100% virtual</li></ul></div>
+    </div>
+    <div class="footer-linea">
+      <p>© 2026 Eduverso · Proyecto final Jóvenes Creativos · Hecho para aprender</p>
+    </div>
+  </footer>
+
+  <script src="js/iconos.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/contacto.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 700, once: true, offset: 80 });
+  </script>
+</body>
+</html>
